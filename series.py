@@ -1,6 +1,7 @@
 # -*- coding: utf -*-
 ERR_MES = 'Please enter a whole number from 1 to 30'
 
+
 def fibonacci(n):
     """Return the nth value in the fibonacci series"""
     if type(n) != int or n not in range(1, 31):
@@ -26,7 +27,7 @@ def lucas(n):
 
 
 def sum_series(n, x=0, y=1):
-    """Return the nth value in the sum series"""
+    """Return the nth value in the series using fibonacci calculations with any starting values"""
     if type(n) != int or n not in range(1, 31):
         return ERR_MES
     elif n == 1:
@@ -37,8 +38,7 @@ def sum_series(n, x=0, y=1):
         return sum_series(n - 1, x, y) + sum_series(n - 2, x, y)
 
 if __name__ == "__main__":
-    print(u'This module defines functions that implement mathematical series \n... \n\nfibonacci(n): \n', fibonacci.__doc__)
-    
-
-
-
+    print(u'This module defines functions that implement mathematical series\ \n...')
+    print('fibonacci(n): \n', fibonacci.__doc__, '\n')
+    print('lucas(n): \n', lucas.__doc__, '\n')
+    print('sum_series(n, x=0, y=1): \n', sum_series.__doc__)
