@@ -2,6 +2,8 @@
 import pytest
 
 FIB_TABLE = [
+    (-1, 'Please enter a whole positive number'),
+    (0, 'Please enter a whole positive number'),
     (1, 0),
     (2, 1),
     (3, 1),
@@ -21,3 +23,23 @@ FIB_TABLE = [
 def test_fibonacci(n, result):
     from series import fibonacci
     assert fibonacci(n) == result
+
+
+LUCAS_TABLE = [
+    (1, 2),
+    (2, 1),
+    (3, 3),
+    (4, 4),
+    (5, 7),
+    (6, 11),
+    (7, 18),
+    (8, 29),
+    (9, 47),
+    (10, 76),
+]
+
+
+@pytest.mark.parametrize('n, result', LUCAS_TABLE)
+def test_lucas(n, result):
+    from series import lucas
+    assert lucas(n) == result
