@@ -2,6 +2,7 @@
 import pytest
 
 FIB_TABLE = [
+    ('adsg', 'Please enter a whole positive number'),
     (-1, 'Please enter a whole positive number'),
     (0, 'Please enter a whole positive number'),
     (1, 0),
@@ -26,6 +27,9 @@ def test_fibonacci(n, result):
 
 
 LUCAS_TABLE = [
+    ('adsg', 'Please enter a whole positive number'),
+    (-1, 'Please enter a whole positive number'),
+    (0, 'Please enter a whole positive number'),
     (1, 2),
     (2, 1),
     (3, 3),
@@ -43,3 +47,23 @@ LUCAS_TABLE = [
 def test_lucas(n, result):
     from series import lucas
     assert lucas(n) == result
+
+
+SUM_TABLE = [
+    (1, 0, 1, 0),
+    (2, 0, 1, 1),
+    (3, 0, 1, 1),
+    (1, 2, 1, 2),
+    (2, 2, 1, 1),
+    (3, 2, 1, 3),
+    (1, 3, 2, 3),
+    (2, 3, 2, 2),
+    (3, 3, 2, 5),
+    (4, 3, 2, 7),
+]
+
+
+@pytest.mark.parametrize('n, x, y, result', SUM_TABLE)
+def test_sum(n, x, y, result):
+    from series import sum_series
+    assert sum_series(n, x, y) == result
