@@ -1,10 +1,13 @@
 # -*- coding: utf -*-
 import pytest
 
+ERR_MES = 'Please enter a whole number from 1 to 30'
+
 FIB_TABLE = [
-    ('adsg', 'Please enter a whole positive number'),
-    (-1, 'Please enter a whole positive number'),
-    (0, 'Please enter a whole positive number'),
+    ('adsg', ERR_MES),
+    (-1, ERR_MES),
+    (0, ERR_MES),
+    (31, ERR_MES),
     (1, 0),
     (2, 1),
     (3, 1),
@@ -16,7 +19,7 @@ FIB_TABLE = [
     (9, 21),
     (10, 34),
     (11, 55),
-    (12, 89)
+    (12, 89),
 ]
 
 
@@ -27,9 +30,10 @@ def test_fibonacci(n, result):
 
 
 LUCAS_TABLE = [
-    ('adsg', 'Please enter a whole positive number'),
-    (-1, 'Please enter a whole positive number'),
-    (0, 'Please enter a whole positive number'),
+    ('adsg', ERR_MES),
+    (-1, ERR_MES),
+    (0, ERR_MES),
+    (31, ERR_MES),
     (1, 2),
     (2, 1),
     (3, 3),
