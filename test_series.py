@@ -1,7 +1,7 @@
 # -*- coding: utf -*-
 import pytest
 
-ERR_MES = 'Please enter a whole number from 1 to 30'
+from series import ERR_MES
 
 FIB_TABLE = [
     ('adsg', ERR_MES),
